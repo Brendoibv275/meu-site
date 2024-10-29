@@ -1,34 +1,31 @@
-/* Ajustes para mobile */
+/* Ajustes para telas mobile */
 @media screen and (max-width: 768px) {
-  /* Ajuste do texto principal */
   .hero-title {
-    font-size: 2rem;
+    font-size: 2rem; /* Reduz o tamanho do título principal */
     line-height: 1.2;
-    padding: 0 20px;
+    margin: 1rem 0;
   }
 
-  /* Ajuste da estrela e texto */
-  .star-text {
-    font-size: 0.9rem;
-    max-width: 280px;
-    margin: 0 auto;
-    padding: 10px;
+  .hero-subtitle {
+    font-size: 1.2rem; /* Reduz o tamanho do subtítulo */
+    line-height: 1.4;
+    margin: 0.8rem 0;
   }
 
-  /* Ajuste dos botões */
+  .hero-description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
   .cta-button {
-    width: 90%;
-    margin: 10px auto;
-    padding: 15px;
+    width: 80%; /* Ajusta largura do botão */
+    max-width: 300px;
+    margin: 1rem auto;
+    padding: 0.8rem 1.5rem;
   }
 
-  /* Ajuste do menu */
-  .nav-menu {
-    padding: 10px;
-  }
-
-  /* Ajuste do espaçamento geral */
   .container {
-    padding: 20px;
+    padding: 1rem;
+    margin: 0 auto;
   }
-} 
+}
