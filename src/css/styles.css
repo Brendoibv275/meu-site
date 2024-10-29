@@ -1,0 +1,34 @@
+/* Ajustes para mobile */
+@media screen and (max-width: 768px) {
+  /* Ajuste do texto principal */
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    padding: 0 20px;
+  }
+
+  /* Ajuste da estrela e texto */
+  .star-text {
+    font-size: 0.9rem;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  /* Ajuste dos botões */
+  .cta-button {
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  /* Ajuste do menu */
+  .nav-menu {
+    padding: 10px;
+  }
+
+  /* Ajuste do espaçamento geral */
+  .container {
+    padding: 20px;
+  }
+} 
