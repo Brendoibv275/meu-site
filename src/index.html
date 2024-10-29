@@ -1,32 +1,74 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <style>
-    @media screen and (max-width: 768px) {
-      .hero-section {
-        padding: 1rem;
-      }
-      
-      h1, .main-title {
-        font-size: 2.2rem !important;
-        line-height: 1.2 !important;
-        margin: 1rem 0 !important;
-      }
-      
-      h2, .subtitle {
-        font-size: 1.5rem !important;
-        line-height: 1.4 !important;
-      }
-      
-      p, .description {
-        font-size: 1rem !important;
-        padding: 0 1rem !important;
-      }
-      
-      .button, .cta-button {
-        width: 80% !important;
-        max-width: 300px !important;
-        margin: 1rem auto !important;
-      }
-    }
-  </style>
-</head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Página</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Brendo Dutra</h1>
+    </header>
+    <div class="container">
+        <h1>Onde Ciência, Palavras & Código se Encontram</h1>
+        <p>Transformando complexidade em resultados extraordinários.</p>
+        <a href="#" class="button">Revolucione seu Negócio →</a>
+        <a href="#" class="button">Descubra Como →</a>
+    </div>
+</body>
+</html>
