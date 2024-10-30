@@ -28,7 +28,7 @@
                 </svg>
             </button>
 
-            <!-- Dropdown menu -->
+            <!-- Menu dropdown -->
             <div x-show="open" 
                  @click.away="open = false"
                  class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-navy-light border border-white/10">
@@ -47,15 +47,15 @@
         </div>
     </div>
 
-    <!-- Header with Glassmorphism -->
-    <header class="fixed w-full top-0 z-40 bg-navy/80 backdrop-blur-md border-b border-white/10">
+    <!-- Header with Logo -->
+    <header class="fixed w-full top-0 z-30 bg-navy/80 backdrop-blur-md border-b border-white/10">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform">
                     Brendo Dutra
                 </a>
-
+                
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
@@ -63,13 +63,13 @@
                     <a href="#contact" class="btn-primary">Contact</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
+                <!-- Mobile Menu (Hamburger) -->
                 <button class="md:hidden text-2xl" id="mobile-menu-button">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
 
-            <!-- Mobile Menu -->
+            <!-- Mobile Menu (Dropdown) -->
             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="flex flex-col space-y-4 mt-4 pb-4">
                     <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
@@ -80,7 +80,7 @@
         </nav>
     </header>
 
-    <!-- Spacer for fixed header -->
+    <!-- Spacer to compensate for fixed header -->
     <div class="h-20"></div>
 
     <!-- Hero Section -->
