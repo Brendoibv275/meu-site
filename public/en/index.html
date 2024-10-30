@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brendo Dutra - Expert in Copywriting and Automation. Transform your business with efficient digital strategies.">
+    <title>Brendo Dutra | Copywriting & Automation</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-navy text-gray-100">
+    <!-- Language Selector with Dropdown -->
+    <div class="fixed top-4 right-4 z-50">
+        <div class="relative" x-data="{ open: false }">
+            <!-- Main button -->
+            <button @click="open = !open" 
+                    class="flex items-center gap-2 px-3 py-2 rounded-md bg-blue-400/20 hover:bg-blue-400/30 transition-colors">
+                <span class="text-sm font-medium">
+                    🇺🇸 English
+                </span>
+                <svg class="w-4 h-4 transition-transform" :class="{'rotate-180': open}" 
+                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                     stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div x-show="open" 
+                 @click.away="open = false"
+                 class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-navy-light border border-white/10">
+                <div class="py-1">
+                    <a href="../pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                        🇧🇷 Português
+                    </a>
+                    <a href="../en/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                        🇺🇸 English
+                    </a>
+                    <a href="../fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                        🇫🇷 Français
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header with Glassmorphism -->
+    <header class="fixed w-full top-0 z-40 bg-navy/80 backdrop-blur-md border-b border-white/10">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform">
+                    Brendo Dutra
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                    <a href="#services" class="hover:text-blue-400 transition-colors">Services</a>
+                    <a href="#contact" class="btn-primary">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-2xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 mt-4 pb-4">
+                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                    <a href="#services" class="hover:text-blue-400 transition-colors">Services</a>
+                    <a href="#contact" class="btn-primary text-center">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Spacer for fixed header -->
+    <div class="h-20"></div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative overflow-hidden bg-gradient-to-b from-navy to-navy-light">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+        
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full filter blur-[100px]"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-400/20 rounded-full filter blur-[100px]"></div>
+        
+        <div class="container mx-auto px-6 relative">
+            <div class="flex flex-col items-center justify-center min-h-screen text-center py-20">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
+                    <span class="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
+                        Where Science, Words & Code
+                    </span>
+                    <br />
+                    <span class="text-3xl md:text-5xl mt-2 block">
+                        Come Together
+                    </span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-300 mb-6 max-w-2xl fade-in">
+                    Transforming complexity into extraordinary results
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-4 fade-in mb-16">
+                    <a href="#contact" class="btn-primary text-lg">
+                        Revolutionize Your Business →
+                    </a>
+                    <a href="#services" class="btn-secondary text-lg">
+                        Discover How →
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mt-8 fade-in max-w-4xl mx-auto w-full">
+                    <div class="bg-navy/30 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <div class="text-3xl font-bold text-blue-400">150+</div>
+                        <div class="text-gray-300 font-medium">Automated Processes</div>
+                    </div>
+                    
+                    <div class="bg-navy/30 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <div class="text-3xl font-bold text-blue-400">200k+</div>
+                        <div class="text-gray-300 font-medium">Words Converted</div>
+                    </div>
+                    
+                    <div class="bg-navy/30 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
+                        <div class="text-3xl font-bold text-blue-400">95%</div>
+                        <div class="text-gray-300 font-medium">Optimization Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-navy-light relative overflow-hidden">
+        <div class="container mx-auto px-6 relative">
+            <div class="fade-in space-y-8">
+                <h2 class="text-3xl md:text-4xl font-bold">
+                    <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                        🦷 Transforming Clinical Expertise into Digital Innovation 🤖
+                    </span>
+                </h2>
+                
+                <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+                    <p>
+                        <span class="text-2xl">👋</span> Hi! I'm Brendo Dutra, a professional dedicated to combining clinical precision, strategic copywriting, and cutting-edge technology to create truly innovative digital solutions.
+                    </p>
+
+                    <p>
+                        <span class="text-2xl">🎯</span> My journey as a dentist taught me the value of precision, care, and attention to detail. Today, I bring that same dedication to AI solution development and content creation that truly connects and converts.
+                    </p>
+
+                    <div class="bg-navy/30 p-6 rounded-xl border border-white/10 my-8">
+                        <p class="text-blue-400 font-semibold flex items-center gap-3 flex-wrap justify-center">
+                            <span class="text-2xl">🔬</span> Clinical Expertise
+                            <span class="text-gray-400">+</span>
+                            <span class="text-2xl">💻</span> Technical Mastery
+                            <span class="text-gray-400">+</span>
+                            <span class="text-2xl">✍️</span> Strategic Communication
+                            <span class="text-gray-400">=</span>
+                            <span class="text-2xl">🚀</span> Transformative Solutions
+                        </p>
+                    </div>
+
+                    <p class="text-xl text-blue-400 font-semibold">
+                        <span class="text-2xl">🤝</span> Let's transform your business's digital future together!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-blue-400 text-center mb-4">Custom Solutions</h2>
+            <p class="text-gray-300 text-center mb-12">
+                Discover how we can transform your challenges into opportunities through technology and strategic communication.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- AI Applications -->
+                <div class="p-6 rounded-lg bg-opacity-10 bg-blue-900 border border-blue-800 hover:border-blue-600 transition-all">
+                    <div class="text-3xl text-blue-400 mb-4">
+                        <code>&lt;/&gt;</code>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-400 mb-3">AI Applications</h3>
+                    <p class="text-gray-300 mb-4">
+                        Development of customized AI solutions, from intelligent chatbots to complex automation systems, transforming your vision into technological reality.
+                    </p>
+                    <a href="#contact" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Strategic Copywriting -->
+                <div class="p-6 rounded-lg bg-opacity-10 bg-blue-900 border border-blue-800 hover:border-blue-600 transition-all">
+                    <div class="text-3xl text-blue-400 mb-4">
+                        <i class="fas fa-pen"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-400 mb-3">Strategic Copywriting</h3>
+                    <p class="text-gray-300 mb-4">
+                        Persuasive texts that connect, engage, and convert. Combining storytelling with behavioral psychology to create messages that resonate with your target audience.
+                    </p>
+                    <a href="#contact" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Custom Consulting -->
+                <div class="p-6 rounded-lg bg-opacity-10 bg-blue-900 border border-blue-800 hover:border-blue-600 transition-all">
+                    <div class="text-3xl text-blue-400 mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-400 mb-3">Custom Consulting</h3>
+                    <p class="text-gray-300 mb-4">
+                        Tailored mentoring that combines technology, communication, and strategy. Exclusive guidance to transform your challenges into growth opportunities.
+                    </p>
+                    <a href="#contact" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
+                        Learn More →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-navy relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy to-navy-light opacity-50"></div>
+        
+        <div class="container mx-auto px-6 relative">
+            <h2 class="text-3xl font-bold text-center mb-4">
+                <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                    What Our Clients Say
+                </span>
+            </h2>
+            
+            <p class="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+                Real stories of transformation and success through the union of technology and strategy
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-blue-500/50 transition-all">
+                    <div class="text-blue-400 text-4xl mb-4">❝</div>
+                    <p class="text-gray-300 mb-6">
+                        As a Clinic, we always seek the best for our patients. But with Dr. Brendo's help, we took a leap! The transformation was incredible. Beyond the significant increase in patients, thanks to his campaigns, the use of artificial intelligence and his learning ability to apply everything were fundamental to our success.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-400/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-tooth text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-blue-400">Odontocompany São Luís</div>
+                            <div class="text-sm text-gray-400">Dental Clinic</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-blue-500/50 transition-all">
+                    <div class="text-blue-400 text-4xl mb-4">❝</div>
+                    <p class="text-gray-300 mb-6">
+                        I was looking for strategies to boost my sales, and Brendo's mentoring was crucial. He not only taught me how to create impactful campaigns but also helped build sales funnels that continue to generate results to this day. Brendo's creative ability and empathy are remarkable.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-400/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-line text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-blue-400">Guru Digital</div>
+                            <div class="text-sm text-gray-400">Digital Marketing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-blue-500/50 transition-all">
+                    <div class="text-blue-400 text-4xl mb-4">❝</div>
+                    <p class="text-gray-300 mb-6">
+                        Initially, I sought out Brendo to automate my processes with AI and optimize my workflows. But the partnership went beyond expectations. Brendo's intelligence and strategic vision impressed me so much that, besides having automated my processes, I'm now learning from him and building a business partnership for the future.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-400/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-bullseye text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-blue-400">Cauan Naftale</div>
+                            <div class="text-sm text-gray-400">Paid Traffic Manager</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-navy relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy to-navy-light opacity-50"></div>
+        
+        <div class="container mx-auto px-6 relative">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                        Let's Create Something Extraordinary
+                    </span>
+                </h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Ready to transform your business with intelligent automation and strategic communication? 
+                    Take the first step.
+                </p>
+            </div>
+
+            <!-- Contact Grid -->
+            <div class="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+                <!-- Form -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm fade-in">
+                    <form action="https://formsubmit.co/drbrendo.dutra@hotmail.com" method="POST" class="space-y-6">
+                        <input type="hidden" name="_subject" value="New Contact from Website">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yoursite.com/thank-you.html">
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-2">Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
+                                           focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
+                                           placeholder-gray-500 transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-300 mb-2">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
+                                           focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
+                                           placeholder-gray-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                            <select id="subject" name="subject" required
+                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
+                                       focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
+                                       transition-colors">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="chat-ia">AI Chat Agents</option>
+                                <option value="consultoria-ia">AI Consulting</option>
+                                <option value="aplicacoes-ia">AI Application Development</option>
+                                <option value="copywriting">Copywriting</option>
+                                <option value="consultoria">Custom Consulting</option>
+                                <option value="outro">Other Subject</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
+                                       focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
+                                       placeholder-gray-500 transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" 
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-xl
+                                   transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 
+                                   focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-navy">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8 fade-in">
+                    <!-- Welcome Card -->
+                    <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Let's Talk!</h3>
+                        <p class="text-gray-300 mb-6">
+                            I'm here to help you turn your ideas into reality. 
+                            Choose the best way to get in touch:
+                        </p>
+                        
+                        <!-- Contact Links -->
+                        <div class="space-y-4">
+                            <!-- Email -->
+                            <a href="mailto:drbrendo.dutra@hotmail.com" 
+                               class="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
+                                <div class="text-2xl text-blue-400 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-blue-400">Email</div>
+                                    <div class="text-gray-400">drbrendo.dutra@hotmail.com</div>
+                                </div>
+                            </a>
+
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/5548991175116" target="_blank"
+                               class="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
+                                <div class="text-2xl text-blue-400 group-hover:scale-110 transition-transform">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-blue-400">WhatsApp</div>
+                                    <div class="text-gray-400">(48) 99117-5116</div>
+                                </div>
+                            </a>
+
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/brendo-dutra-63b883216/" target="_blank"
+                               class="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
+                                <div class="text-2xl text-blue-400 group-hover:scale-110 transition-transform">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-blue-400">LinkedIn</div>
+                                    <div class="text-gray-400">@brendo-dutra</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Availability Card -->
+                    <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="h-3 w-3 bg-green-400 rounded-full animate-pulse"></div>
+                            <h3 class="text-xl font-bold text-blue-400">Available for Projects</h3>
+                        </div>
+                        <p class="text-gray-300">
+                            Currently accepting new projects and partnerships. 
+                            Response within 48 business hours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-light/50 border-t border-white/10 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- About Column -->
+                <div>
+                    <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-4 block">
+                        Brendo Dutra
+                    </a>
+                    <p class="text-gray-400 mb-6">
+                        Transforming complexity into extraordinary results through the union of science, words, and code.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-400 mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-400 mb-4">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">AI Chat Agents</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">AI Consulting</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">AI Applications</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Copywriting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-400 mb-4">Contact</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:drbrendo.dutra@hotmail.com" class="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fas fa-envelope"></i>
+                                drbrendo.dutra@hotmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/5548991175116" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fab fa-whatsapp"></i>
+                                (48) 99117-5116
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/brendo-dutra-63b883216/" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-gray-400 text-sm">
+                        © 2024 Brendo Dutra. All rights reserved.
+                    </div>
+                    
+                    <!-- Policy Links -->
+                    <div class="flex gap-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Fade-in animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                    }
+                });
+            });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
