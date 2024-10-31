@@ -30,13 +30,33 @@
         </p>
     </div>
 <!-- Super Agentes Chat -->
-<div style="position: fixed; bottom: 20px; right: 20px; width: 400px; height: 600px; z-index: 9999;">
+<div id="chat-container" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 400px; height: 600px; z-index: 9999;">
     <iframe 
-        src="https://dash.superagentes.ai/agents/cm1rv9n1j007pl23cfnvg7qby/iframe" 
+        id="chat-iframe"
+        src="about:blank"
         width="100%" 
         height="100%" 
         frameborder="0" 
-        allow="clipboard-write"
-        style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        allow="clipboard-write; microphone"
+        style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: white;">
     </iframe>
 </div>
+
+<button 
+    id="chat-button"
+    style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; padding: 15px; border-radius: 50%; background: #2563eb; color: white; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <i class="fas fa-comment"></i>
+</button>
+
+<script>
+document.getElementById('chat-button').addEventListener('click', function() {
+    const container = document.getElementById('chat-container');
+    const iframe = document.getElementById('chat-iframe');
+    
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+        iframe.src = 'https://dash.superagentes.ai/agents/cm1rv9n1j007pl23cfnvg7qby/iframe';
+        this.style.display = 'none';
+    }
+});
+</script>
