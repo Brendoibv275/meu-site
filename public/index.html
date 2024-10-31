@@ -30,7 +30,12 @@
         </p>
     </div>
 <!-- Super Agentes Chat -->
-<div style="position: fixed; bottom: 20px; right: 20px; width: 400px; height: 600px; z-index: 9999;">
+<div id="chat-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; z-index: 9999; transition: all 0.3s ease;">
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+        <button onclick="toggleChat()" style="background: #2563eb; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">
+            <i class="fas fa-minus"></i>
+        </button>
+    </div>
     <iframe 
         src="https://dash.superagentes.ai/agents/cm1rv9n1j007pl23cfnvg7qby/iframe" 
         width="100%" 
@@ -41,3 +46,20 @@
         style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: white;">
     </iframe>
 </div>
+
+<script>
+let isMinimized = false;
+function toggleChat() {
+    const container = document.getElementById('chat-container');
+    const button = container.querySelector('button i');
+    
+    if (isMinimized) {
+        container.style.height = '400px';
+        button.className = 'fas fa-minus';
+    } else {
+        container.style.height = '35px';
+        button.className = 'fas fa-plus';
+    }
+    isMinimized = !isMinimized;
+}
+</script>
