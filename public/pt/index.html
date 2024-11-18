@@ -15,12 +15,12 @@
     <header class="fixed w-full top-0 z-30 bg-navy/80 backdrop-blur-md border-b border-white/10">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <!-- Seletor de Idiomas (Agora fixo no header) -->
+                <!-- Seletor de Idiomas -->
                 <div class="relative" x-data="{ open: false }">
                     <button @click="open = !open" 
                             class="flex items-center gap-2 px-3 py-2 rounded-md bg-blue-400/20 hover:bg-blue-400/30 transition-colors">
                         <span class="text-sm font-medium">
-                            🇧🇷 Português
+                            🇧🇷
                         </span>
                         <svg class="w-4 h-4 transition-transform" :class="{'rotate-180': open}" 
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
@@ -32,16 +32,16 @@
 
                     <div x-show="open" 
                          @click.away="open = false"
-                         class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-navy-light border border-white/10">
+                         class="absolute left-0 mt-2 w-24 rounded-md shadow-lg bg-navy-light border border-white/10">
                         <div class="py-1">
-                            <a href="../pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                                🇧🇷 Português
+                            <a href="../pt/" class="flex items-center justify-center px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇧🇷
                             </a>
-                            <a href="../en/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                                🇺🇸 English
+                            <a href="../en/" class="flex items-center justify-center px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇺🇸
                             </a>
-                            <a href="../fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                                🇫🇷 Français
+                            <a href="../fr/" class="flex items-center justify-center px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇫🇷
                             </a>
                         </div>
                     </div>
