@@ -4,57 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Brendo Dutra - Expert en Copywriting et Automatisation. Transformez votre entreprise avec des stratégies numériques efficaces.">
-    <title>Brendo Dutra | Copywriting & Automatisation</title>
+    <title>Ailes | Copywriting & Automatisation</title>
     <link href="../css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-navy text-gray-100">
-    <!-- Sélecteur de Langue avec Dropdown -->
-    <div class="fixed top-4 right-4 z-50">
-        <div class="relative" x-data="{ open: false }">
-            <!-- Bouton principal -->
-            <button @click="open = !open" 
-                    class="flex items-center gap-2 px-3 py-2 rounded-md bg-blue-400/20 hover:bg-blue-400/30 transition-colors">
-                <span class="text-sm font-medium">
-                    🇫🇷 Français
-                </span>
-                <svg class="w-4 h-4 transition-transform" :class="{'rotate-180': open}" 
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-                     stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </button>
-
-            <!-- Menu dropdown -->
-            <div x-show="open" 
-                 @click.away="open = false"
-                 class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-navy-light border border-white/10">
-                <div class="py-1">
-                    <a href="../pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                        🇧🇷 Português
-                    </a>
-                    <a href="../en/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                        🇺🇸 English
-                    </a>
-                    <a href="../fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                        🇫🇷 Français
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- En-tête avec Logo -->
+    <!-- Header com Logo -->
     <header class="fixed w-full top-0 z-30 bg-navy/80 backdrop-blur-md border-b border-white/10">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform">
-                    Brendo Dutra
-                </a>
+                <!-- Seletor de Idiomas -->
+                <div class="relative" x-data="{ open: false }">
+                    <button @click="open = !open" 
+                            class="flex items-center gap-2 px-3 py-2 rounded-md bg-blue-400/20 hover:bg-blue-400/30 transition-colors">
+                        <span class="text-sm font-medium">
+                            🇫🇷 Français
+                        </span>
+                        <svg class="w-4 h-4 transition-transform" :class="{'rotate-180': open}" 
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                             stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+
+                    <!-- Menu dropdown -->
+                    <div x-show="open" 
+                         @click.away="open = false"
+                         class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-navy-light border border-white/10">
+                        <div class="py-1">
+                            <a href="../pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇧🇷 Português
+                            </a>
+                            <a href="../en/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇺🇸 English
+                            </a>
+                            <a href="../fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇫🇷 Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo Centralizado -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 text-center">
+                    <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform">
+                        Ailes
+                        <span class="text-sm block text-gray-400">Où vos plans prennent leur envol</span>
+                    </a>
+                </div>
                 
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-8">
@@ -63,7 +63,7 @@
                     <a href="#contact" class="btn-primary">Contact</a>
                 </div>
 
-                <!-- Menu Mobile (Hamburger) -->
+                <!-- Menu Mobile -->
                 <button class="md:hidden text-2xl" id="mobile-menu-button">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -80,10 +80,7 @@
         </nav>
     </header>
 
-    <!-- Espaceur pour compenser le header fixe -->
-    <div class="h-20"></div>
-
-    <!-- Section Héro -->
+    <!-- Seção Hero -->
     <section class="min-h-screen relative overflow-hidden bg-gradient-to-b from-navy to-navy-light">
         <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
         
@@ -136,7 +133,7 @@
     </section>
 
     <!-- Section À Propos -->
-    <section id="about" class="py-20 bg-navy-light relative overflow-hidden">
+    <section id="apropos" class="py-20 bg-navy-light relative overflow-hidden">
         <div class="container mx-auto px-6 relative">
             <div class="fade-in space-y-8">
                 <h2 class="text-3xl md:text-4xl font-bold">
@@ -202,7 +199,7 @@
                     </div>
                     <h3 class="text-xl font-semibold text-blue-400 mb-3">Applications IA</h3>
                     <p class="text-gray-300 mb-4">
-                        Développement de solutions IA personnalisées, des chatbots intelligents aux systèmes d'automatisation complexes, transformant votre vision en réalité technologique.
+                        Développement de solutions IA personnalisées, des chatbots intelligents aux systèmes d'automatisation complexes.
                     </p>
                     <a href="#contact" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
                         En Savoir Plus →
@@ -216,7 +213,7 @@
                     </div>
                     <h3 class="text-xl font-semibold text-blue-400 mb-3">Copywriting Stratégique</h3>
                     <p class="text-gray-300 mb-4">
-                        Des textes persuasifs qui connectent, engagent et convertissent. Combinant le storytelling avec la psychologie comportementale pour créer des messages qui résonnent avec votre public cible.
+                        Des textes persuasifs qui connectent, engagent et convertissent. Combinant storytelling et psychologie comportementale.
                     </p>
                     <a href="#contact" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
                         En Savoir Plus →
@@ -230,46 +227,187 @@
                     </div>
                     <h3 class="text-xl font-semibold text-blue-400 mb-3">Conseil Personnalisé</h3>
                     <p class="text-gray-300 mb-4">
-                        Mentorat sur mesure qui combine technologie, communication et stratégie. Un accompagnement exclusif pour transformer vos défis en opportunités de croissance.
+                        Mentorat sur mesure combinant technologie, communication et stratégie pour transformer vos défis en opportunités.
                     </p>
                     <a href="#contact" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
                         En Savoir Plus →
                     </a>
                 </div>
             </div>
-            <!-- Section investissement -->
-            <div class="mt-16 max-w-2xl mx-auto">
-                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm text-center">
-                    <h3 class="text-2xl font-bold text-blue-400">Investissement</h3>
-                    <p class="text-gray-300 mt-4">
-                        Chaque projet est unique et mérite une analyse personnalisée.
-                        Planifiez une consultation gratuite pour discuter :
-                    </p>
-                    <ul class="mt-4 space-y-2 text-gray-300">
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Les objectifs de votre projet
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Besoins spécifiques
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Délai de mise en œuvre
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Meilleure solution pour votre budget
-                        </li>
-                    </ul>
-                    <a href="#contato" class="btn-primary mt-6 inline-block">
-                        Planifier une Consultation Gratuite
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
+
+    <!-- Section Investissement -->
+    <div class="mt-16 max-w-2xl mx-auto">
+        <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm text-center">
+            <h3 class="text-2xl font-bold text-blue-400">Investissement</h3>
+            <p class="text-gray-300 mt-4">
+                Chaque projet est unique et mérite une analyse personnalisée.
+                Planifiez une consultation gratuite pour discuter :
+            </p>
+            <ul class="mt-4 space-y-2 text-gray-300">
+                <li class="flex items-center justify-center gap-2">
+                    <span class="text-blue-400">•</span> 
+                    Les objectifs de votre projet
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <span class="text-blue-400">•</span> 
+                    Besoins spécifiques
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <span class="text-blue-400">•</span> 
+                    Délai de mise en œuvre
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <span class="text-blue-400">•</span> 
+                    Meilleure solution pour votre budget
+                </li>
+            </ul>
+            <a href="#contact" class="btn-primary mt-6 inline-block">
+                Planifier une Consultation Gratuite
+            </a>
+        </div>
+    </div>
+
+    <!-- Grille de Prix -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <!-- Card IA -->
+        <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:scale-105 transition-all">
+            <div class="text-3xl text-blue-400 mb-6">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-400 mb-4">Solutions IA</h3>
+            
+            <div class="space-y-6">
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="font-medium text-white">Pack Initial</h4>
+                    <p class="text-blue-400 font-bold text-xl mb-2">2.500 €</p>
+                    <ul class="text-gray-300 space-y-2 text-sm">
+                        <li>• Chatbot basique</li>
+                        <li>• 1 processus d'automatisation</li>
+                        <li>• 30 jours de support technique</li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="font-medium text-white">Pack Professionnel</h4>
+                    <p class="text-blue-400 font-bold text-xl mb-2">5.000 €</p>
+                    <ul class="text-gray-300 space-y-2 text-sm">
+                        <li>• Chatbot personnalisé</li>
+                        <li>• 2-3 processus d'automatisation</li>
+                        <li>• 60 jours de support</li>
+                        <li>• Formation de l'équipe</li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="font-medium text-white">Pack Enterprise</h4>
+                    <p class="text-blue-400 font-bold text-xl mb-2">Sur devis</p>
+                    <ul class="text-gray-300 space-y-2 text-sm">
+                        <li>• Système IA complet</li>
+                        <li>• Automatisations multiples</li>
+                        <li>• Support continu</li>
+                        <li>• Conseil stratégique</li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#contact" class="btn-primary w-full text-center mt-6">
+                Demander un Devis
+            </a>
+        </div>
+
+        <!-- Card Copywriting -->
+        <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:scale-105 transition-all">
+            <div class="text-3xl text-blue-400 mb-6">
+                <i class="fas fa-pen-fancy"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-400 mb-4">Copywriting Stratégique</h3>
+            
+            <div class="space-y-6">
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="font-medium text-white">Pack Essentiel</h4>
+                    <p class="text-blue-400 font-bold text-xl mb-2">997 €</p>
+                    <ul class="text-gray-300 space-y-2 text-sm">
+                        <li>• Landing page optimisée</li>
+                        <li>• 5 emails séquentiels</li>
+                        <li>• 15 posts réseaux sociaux</li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="font-medium text-white">Pack Avancé</h4>
+                    <p class="text-blue-400 font-bold text-xl mb-2">2.500 €</p>
+                    <ul class="text-gray-300 space-y-2 text-sm">
+                        <li>• Tunnel de vente complet</li>
+                        <li>• 10 emails séquentiels</li>
+                        <li>• 30 posts réseaux sociaux</li>
+                        <li>• Scripts vidéo</li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="font-medium text-white">Pack Premium</h4>
+                    <p class="text-blue-400 font-bold text-xl mb-2">5.000 €+</p>
+                    <ul class="text-gray-300 space-y-2 text-sm">
+                        <li>• Stratégie complète</li>
+                        <li>• Tunnel avec upsells</li>
+                        <li>• Email marketing mensuel</li>
+                        <li>• Gestion de contenu complète</li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#contact" class="btn-primary w-full text-center mt-6">
+                Demander un Devis
+            </a>
+        </div>
+
+        <!-- Card Conseil -->
+        <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:scale-105 transition-all">
+            <div class="text-3xl text-blue-400 mb-6">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-400 mb-4">Conseil et Mentorat</h3>
+            
+            <div class="space-y-6">
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="font-medium text-white">Mentorat Individuel</h4>
+                    <p class="text-blue-400 font-bold text-xl mb-2">497 €</p>
+                    <ul class="text-gray-300 space-y-2 text-sm">
+                        <li>• Session unique (1h30)</li>
+                        <li>• Diagnostic personnalisé</li>
+                        <li>• Plan d'action</li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="font-medium text-white">Pack Mensuel</h4>
+                    <p class="text-blue-400 font-bold text-xl mb-2">1.497 €</p>
+                    <ul class="text-gray-300 space-y-2 text-sm">
+                        <li>• 4 sessions mensuelles</li>
+                        <li>• Support WhatsApp</li>
+                        <li>• Matériel exclusif</li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-white/10 pt-4">
+                    <h4 class="font-medium text-white">Conseil Entreprise</h4>
+                    <p class="text-blue-400 font-bold text-xl mb-2">2.500 €+</p>
+                    <ul class="text-gray-300 space-y-2 text-sm">
+                        <li>• Diagnostic complet</li>
+                        <li>• Plan stratégique</li>
+                        <li>• Mise en œuvre assistée</li>
+                        <li>• Métriques de résultats</li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#contact" class="btn-primary w-full text-center mt-6">
+                Planifier un Diagnostic
+            </a>
+        </div>
+    </div>
 
     <!-- Section Témoignages -->
     <section class="py-20 bg-navy relative overflow-hidden">
@@ -298,7 +436,7 @@
                             <i class="fas fa-tooth text-blue-400 text-xl"></i>
                         </div>
                         <div>
-                            <div class="font-semibold text-blue-400">Clínica Weiss</div>
+                            <div class="font-semibold text-blue-400">Clinique Weiss</div>
                             <div class="text-sm text-gray-400">Clinique Dentaire</div>
                         </div>
                     </div>
@@ -363,121 +501,69 @@
                 <!-- Formulaire -->
                 <form action="https://formsubmit.co/drbrendo.dutra@hotmail.com" method="POST" class="space-y-6">
                     <!-- Paramètres FormSubmit -->
-                    <input type="hidden" name="_subject" value="Nouveau Contact du Site">
+                    <input type="hidden" name="_subject" value="Nouveau Contact du Site Ailes">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_autoresponse" value="Merci pour votre contact! Je vous répondrai bientôt.">
                     <input type="hidden" name="_next" value="https://brendodutra.netlify.app/fr/merci.html">
                 
                     <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-gray-300 mb-2">Nom</label>
-                                <input type="text" id="name" name="name" required
-                                    class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
-                                           focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
-                                           placeholder-gray-500 transition-colors">
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-gray-300 mb-2">Email</label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
-                                           focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
-                                           placeholder-gray-500 transition-colors">
-                            </div>
-                        </div>
-
                         <div>
-                            <label for="subject" class="block text-gray-300 mb-2">Sujet</label>
-                            <select id="subject" name="subject" required
+                            <label for="name" class="block text-gray-300 mb-2">Nom</label>
+                            <input type="text" id="name" name="name" required
                                 class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
                                        focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
-                                       transition-colors">
-                                <option value="" disabled selected>Sélectionnez une option</option>
-                                <option value="consultation-gratuite">Consultation Gratuite</option>
-                                <option value="applications-ia">Applications IA</option>
-                                <option value="copywriting">Copywriting Stratégique</option>
-                                <option value="consultation">Consultation Personnalisée</option>
-                                <option value="autre">Autre Sujet</option>
-                            </select>
+                                       placeholder-gray-500 transition-colors">
                         </div>
-
+                        
                         <div>
-                            <label for="message" class="block text-gray-300 mb-2">Message</label>
-                            <textarea id="message" name="message" rows="5" required
+                            <label for="email" class="block text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
                                 class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
                                        focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
-                                       placeholder-gray-500 transition-colors resize-none"></textarea>
+                                       placeholder-gray-500 transition-colors">
                         </div>
+                    </div>
 
-                        <button type="submit" 
-                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-xl
-                                   transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 
-                                   focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-navy">
-                            Envoyer le Message
-                        </button>
-                    </form>
-                </div>
+                    <div>
+                        <label for="subject" class="block text-gray-300 mb-2">Sujet</label>
+                        <select id="subject" name="subject" required
+                            class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
+                                   focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
+                                   transition-colors">
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="consultation-gratuite">Consultation Gratuite</option>
+                            <option value="applications-ia">Applications IA</option>
+                            <option value="copywriting">Copywriting Stratégique</option>
+                            <option value="consultation">Consultation Personnalisée</option>
+                            <option value="autre">Autre Sujet</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
+                                   focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
+                                   placeholder-gray-500 transition-colors resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" 
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-xl
+                               transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 
+                               focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-navy">
+                        Envoyer le Message
+                    </button>
+                </form>
 
                 <!-- Informations de Contact -->
                 <div class="space-y-8 fade-in">
-                    <!-- Carte de Bienvenue -->
+                    <!-- Carte de Contact -->
                     <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
                         <h3 class="text-2xl font-bold text-blue-400 mb-4">Parlons-en !</h3>
                         <p class="text-gray-300 mb-6">
                             Je suis là pour vous aider à transformer vos idées en réalité. 
                             Choisissez la meilleure façon de me contacter :
-                        </p>
-                        
-                        <!-- Liens de Contact -->
-                        <div class="space-y-4">
-                            <!-- Email -->
-                            <a href="mailto:drbrendo.dutra@hotmail.com" 
-                               class="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
-                                <div class="text-2xl text-blue-400 group-hover:scale-110 transition-transform">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <div class="font-medium text-blue-400">Email</div>
-                                    <div class="text-gray-400">drbrendo.dutra@hotmail.com</div>
-                                </div>
-                            </a>
-
-                            <!-- WhatsApp -->
-                            <a href="https://wa.me/5548991175116" target="_blank"
-                               class="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
-                                <div class="text-2xl text-blue-400 group-hover:scale-110 transition-transform">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div>
-                                    <div class="font-medium text-blue-400">WhatsApp</div>
-                                    <div class="text-gray-400">(48) 99117-5116</div>
-                                </div>
-                            </a>
-
-                            <!-- LinkedIn -->
-                            <a href="https://www.linkedin.com/in/brendo-dutra-63b883216/" target="_blank"
-                               class="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
-                                <div class="text-2xl text-blue-400 group-hover:scale-110 transition-transform">
-                                    <i class="fab fa-linkedin"></i>
-                                </div>
-                                <div>
-                                    <div class="font-medium text-blue-400">LinkedIn</div>
-                                    <div class="text-gray-400">@brendo-dutra</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Carte de Disponibilité -->
-                    <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="h-3 w-3 bg-green-400 rounded-full animate-pulse"></div>
-                            <h3 class="text-xl font-bold text-blue-400">Disponible pour des Projets</h3>
-                        </div>
-                        <p class="text-gray-300">
-                            Actuellement en mesure d'accepter de nouveaux projets et partenariats. 
-                            Réponse sous 48 heures ouvrées.
                         </p>
                     </div>
                 </div>
@@ -485,42 +571,43 @@
         </div>
     </section>
 
-    <!-- Pied de Page -->
+    <!-- Footer -->
     <footer class="bg-navy-light/50 border-t border-white/10 backdrop-blur-sm">
         <div class="container mx-auto px-6 py-12">
+            <!-- Grille Principale -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <!-- À Propos -->
+                <!-- Colonne 1 - À propos -->
                 <div>
                     <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-4 block">
                         Brendo Dutra
                     </a>
                     <p class="text-gray-400 mb-6">
-                        Transformer la complexité en résultats extraordinaires grâce à l'union de la science, des mots et du code.
+                        Transformer la complexité en résultats extraordinaires à travers l'union de la science, des mots et du code.
                     </p>
                 </div>
 
-                <!-- Liens Rapides -->
+                <!-- Colonne 2 - Liens Rapides -->
                 <div>
                     <h3 class="text-lg font-semibold text-blue-400 mb-4">Liens Rapides</h3>
                     <ul class="space-y-3">
-                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">À Propos</a></li>
+                        <li><a href="#apropos" class="text-gray-400 hover:text-blue-400 transition-colors">À propos</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Services</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
-                <!-- Services -->
+                <!-- Colonne 3 - Services -->
                 <div>
                     <h3 class="text-lg font-semibold text-blue-400 mb-4">Services</h3>
                     <ul class="space-y-3">
                         <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Applications IA</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Copywriting Stratégique</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Consultation Personnalisée</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Conseil Personnalisé</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Consultation Gratuite</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
+                <!-- Colonne 4 - Contact -->
                 <div>
                     <h3 class="text-lg font-semibold text-blue-400 mb-4">Contact</h3>
                     <ul class="space-y-3">
@@ -548,12 +635,13 @@
 
             <!-- Séparateur -->
             <div class="border-t border-white/10 pt-8">
+                <!-- Copyright et Liens -->
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div class="text-gray-400 text-sm">
                         © 2024 Brendo Dutra. Tous droits réservés.
                     </div>
                     
-                    <!-- Liens de Politique -->
+                    <!-- Liens Politiques -->
                     <div class="flex gap-6 text-sm">
                         <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Politique de Confidentialité</a>
                         <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Conditions d'Utilisation</a>
@@ -562,6 +650,24 @@
             </div>
         </div>
     </footer>
+
+    <!-- Widget Chat -->
+    <div id="chat-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; z-index: 9999; transition: all 0.3s ease;">
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+            <button onclick="toggleChat()" style="background: #2563eb; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+        <iframe 
+            src="https://dash.superagentes.ai/agents/cm1rv9n1j007pl23cfnvg7qby/iframe" 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            loading="lazy"
+            allow="clipboard-write; microphone"
+            style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: white;">
+        </iframe>
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -592,38 +698,22 @@
                 observer.observe(element);
             });
         });
-    </script>
-<!-- Super Agentes Chat -->
-<div id="chat-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; z-index: 9999; transition: all 0.3s ease;">
-    <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-        <button onclick="toggleChat()" style="background: #2563eb; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">
-            <i class="fas fa-minus"></i>
-        </button>
-    </div>
-    <iframe 
-        src="https://dash.superagentes.ai/agents/cm1rv9n1j007pl23cfnvg7qby/iframe" 
-        width="100%" 
-        height="100%" 
-        frameborder="0" 
-        loading="lazy"
-        allow="clipboard-write; microphone"
-        style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: white;">
-    </iframe>
-</div>
 
-<script>
-let isMinimized = false;
-function toggleChat() {
-    const container = document.getElementById('chat-container');
-    const button = container.querySelector('button i');
-    
-    if (isMinimized) {
-        container.style.height = '400px';
-        button.className = 'fas fa-minus';
-    } else {
-        container.style.height = '35px';
-        button.className = 'fas fa-plus';
-    }
-    isMinimized = !isMinimized;
-}
-</script>
+        // Chat widget
+        let isMinimized = false;
+        function toggleChat() {
+            const container = document.getElementById('chat-container');
+            const button = container.querySelector('button i');
+            
+            if (isMinimized) {
+                container.style.height = '400px';
+                button.className = 'fas fa-minus';
+            } else {
+                container.style.height = '35px';
+                button.className = 'fas fa-plus';
+            }
+            isMinimized = !isMinimized;
+        }
+    </script>
+</body>
+</html>

@@ -11,50 +11,49 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-navy text-gray-100">
-    <!-- Seletor de Idiomas com Dropdown -->
-    <div class="fixed top-4 right-4 z-50">
-        <div class="relative" x-data="{ open: false }">
-            <!-- Botão principal -->
-            <button @click="open = !open" 
-                    class="flex items-center gap-2 px-3 py-2 rounded-md bg-blue-400/20 hover:bg-blue-400/30 transition-colors">
-                <span class="text-sm font-medium">
-                    🇧🇷 Português
-                </span>
-                <svg class="w-4 h-4 transition-transform" :class="{'rotate-180': open}" 
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-                     stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </button>
-
-            <!-- Menu dropdown -->
-            <div x-show="open" 
-                 @click.away="open = false"
-                 class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-navy-light border border-white/10">
-                <div class="py-1">
-                    <a href="../pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                        🇧🇷 Português
-                    </a>
-                    <a href="../en/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                        🇺🇸 English
-                    </a>
-                    <a href="../fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                        🇫🇷 Français
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Header com Logo -->
     <header class="fixed w-full top-0 z-30 bg-navy/80 backdrop-blur-md border-b border-white/10">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform">
-                    Brendo Dutra
-                </a>
+                <!-- Seletor de Idiomas (Agora fixo no header) -->
+                <div class="relative" x-data="{ open: false }">
+                    <button @click="open = !open" 
+                            class="flex items-center gap-2 px-3 py-2 rounded-md bg-blue-400/20 hover:bg-blue-400/30 transition-colors">
+                        <span class="text-sm font-medium">
+                            🇧🇷 Português
+                        </span>
+                        <svg class="w-4 h-4 transition-transform" :class="{'rotate-180': open}" 
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                             stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+
+                    <div x-show="open" 
+                         @click.away="open = false"
+                         class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-navy-light border border-white/10">
+                        <div class="py-1">
+                            <a href="../pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇧🇷 Português
+                            </a>
+                            <a href="../en/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇺🇸 English
+                            </a>
+                            <a href="../fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇫🇷 Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo Centralizado -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 text-center">
+                    <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform">
+                        Ailes
+                        <span class="text-sm block text-gray-400">Onde seus planos voam</span>
+                    </a>
+                </div>
                 
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-8">
@@ -67,15 +66,6 @@
                 <button class="md:hidden text-2xl" id="mobile-menu-button">
                     <i class="fas fa-bars"></i>
                 </button>
-            </div>
-
-            <!-- Menu Mobile (Dropdown) -->
-            <div class="md:hidden hidden" id="mobile-menu">
-                <div class="flex flex-col space-y-4 mt-4 pb-4">
-                    <a href="#sobre" class="hover:text-blue-400 transition-colors">Sobre</a>
-                    <a href="#servicos" class="hover:text-blue-400 transition-colors">Serviços</a>
-                    <a href="#contato" class="btn-primary text-center">Contato</a>
-                </div>
             </div>
         </nav>
     </header>
@@ -193,85 +183,188 @@
     </section>
 
     <!-- Seção Serviços -->
-    <section id="servicos" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-blue-400 text-center mb-4">Soluções Personalizadas</h2>
-            <p class="text-gray-300 text-center mb-12">
-                Descubra como podemos transformar seus desafios em oportunidades através da tecnologia e comunicação estratégica.
-            </p>
+    <section id="servicos" class="py-20 bg-navy relative overflow-hidden">
+        <div class="container mx-auto px-6 relative">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                        Soluções que Elevam seu Negócio
+                    </span>
+                </h2>
+                <p class="text-gray-300 text-lg">
+                    Escolha o plano ideal para suas necessidades
+                </p>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Aplicações em IA -->
-                <div class="p-6 rounded-lg bg-opacity-10 bg-blue-900 border border-blue-800 hover:border-blue-600 transition-all">
-                    <div class="text-3xl text-blue-400 mb-4">
-                        <code>&lt;/&gt;</code>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Card IA e Automação -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:scale-105 transition-all">
+                    <div class="text-3xl text-blue-400 mb-6">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-400 mb-3">Aplicações em IA</h3>
-                    <p class="text-gray-300 mb-4">
-                        Desenvolvimento de soluções customizadas com IA, desde chatbots inteligentes até sistemas complexos de automação, transformando sua visão em realidade tecnológica.
-                    </p>
-                    <a href="#contato" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
-                        Saiba mais →
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Soluções em IA e Automação</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Pacote Inicial</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">R$ 2.500</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Chatbot básico</li>
+                                <li>• 1 processo de automação</li>
+                                <li>• 30 dias de suporte técnico</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Pacote Profissional</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">R$ 5.000</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Chatbot personalizado</li>
+                                <li>• 2-3 processos de automação</li>
+                                <li>• 60 dias de suporte</li>
+                                <li>• Treinamento da equipe</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Pacote Enterprise</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">Sob consulta</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Sistema completo de IA</li>
+                                <li>• Múltiplas automações</li>
+                                <li>• Suporte contínuo</li>
+                                <li>• Consultoria estratégica</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#contato" class="btn-primary w-full text-center mt-6">
+                        Solicitar Proposta
                     </a>
                 </div>
 
-                <!-- Copywriting Estratégico -->
-                <div class="p-6 rounded-lg bg-opacity-10 bg-blue-900 border border-blue-800 hover:border-blue-600 transition-all">
-                    <div class="text-3xl text-blue-400 mb-4">
-                        <i class="fas fa-pen"></i>
+                <!-- Card Copywriting -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:scale-105 transition-all">
+                    <div class="text-3xl text-blue-400 mb-6">
+                        <i class="fas fa-pen-fancy"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-400 mb-3">Copywriting Estratégico</h3>
-                    <p class="text-gray-300 mb-4">
-                        Textos persuasivos que conectam, engajam e convertem. Combinando storytelling com psicologia comportamental para criar mensagens que ressoam com seu público-alvo.
-                    </p>
-                    <a href="#contato" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
-                        Saiba mais →
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Copywriting Estratégico</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Pacote Essencial</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">R$ 997</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Landing page otimizada</li>
+                                <li>• 5 emails sequenciais</li>
+                                <li>• 15 posts para redes sociais</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Pacote Avançado</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">R$ 2.500</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Funil completo de vendas</li>
+                                <li>• 10 emails sequenciais</li>
+                                <li>• 30 posts para redes sociais</li>
+                                <li>• Scripts para vídeos</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Pacote Premium</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">R$ 5.000+</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Estratégia completa</li>
+                                <li>• Funil com upsells</li>
+                                <li>• Email marketing mensal</li>
+                                <li>• Gestão de conteúdo completa</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#contato" class="btn-primary w-full text-center mt-6">
+                        Solicitar Proposta
                     </a>
                 </div>
 
-                <!-- Consultoria Personalizada -->
-                <div class="p-6 rounded-lg bg-opacity-10 bg-blue-900 border border-blue-800 hover:border-blue-600 transition-all">
-                    <div class="text-3xl text-blue-400 mb-4">
+                <!-- Card Consultoria -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:scale-105 transition-all">
+                    <div class="text-3xl text-blue-400 mb-6">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-400 mb-3">Consultoria Personalizada</h3>
-                    <p class="text-gray-300 mb-4">
-                        Mentoria sob medida que une tecnologia, comunicação e estratégia. Um acompanhamento exclusivo para transformar seus desafios em oportunidades de crescimento.
-                    </p>
-                    <a href="#contato" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
-                        Saiba mais →
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Consultoria e Mentoria</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Mentoria Individual</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">R$ 497</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Sessão única (1h30)</li>
+                                <li>• Diagnóstico personalizado</li>
+                                <li>• Plano de ação</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Pacote Mensal</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">R$ 1.497</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• 4 sessões mensais</li>
+                                <li>• Suporte via WhatsApp</li>
+                                <li>• Materiais exclusivos</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Consultoria Empresarial</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">R$ 2.500+</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Diagnóstico completo</li>
+                                <li>• Plano estratégico</li>
+                                <li>• Implementação assistida</li>
+                                <li>• Métricas de resultado</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#contato" class="btn-primary w-full text-center mt-6">
+                        Agendar Diagnóstico
                     </a>
                 </div>
             </div>
-            <!-- Nova seção de investimento -->
-            <div class="mt-16 max-w-2xl mx-auto">
-                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm text-center">
-                    <h3 class="text-2xl font-bold text-blue-400">Investimento</h3>
-                    <p class="text-gray-300 mt-4">
-                        Cada projeto é único e merece uma análise personalizada.
-                        Agende uma consultoria gratuita para discutirmos:
+
+            <!-- Seção de Garantias -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-navy-light/20 p-6 rounded-xl border border-white/5">
+                    <div class="text-2xl text-blue-400 mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-400 mb-2">Garantia de Satisfação</h4>
+                    <p class="text-gray-300 text-sm">
+                        30 dias de garantia em todos os serviços ou seu dinheiro de volta
                     </p>
-                    <ul class="mt-4 space-y-2 text-gray-300">
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Objetivos do seu projeto
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Necessidades específicas
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Prazo de implementação
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Melhor solução para seu orçamento
-                        </li>
-                    </ul>
-                    <a href="#contato" class="btn-primary mt-6 inline-block">
-                        Agendar Consultoria Gratuita
-                    </a>
+                </div>
+
+                <div class="bg-navy-light/20 p-6 rounded-xl border border-white/5">
+                    <div class="text-2xl text-blue-400 mb-4">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-400 mb-2">Pagamento Facilitado</h4>
+                    <p class="text-gray-300 text-sm">
+                        Parcele em até 12x nos cartões ou 10% de desconto à vista
+                    </p>
+                </div>
+
+                <div class="bg-navy-light/20 p-6 rounded-xl border border-white/5">
+                    <div class="text-2xl text-blue-400 mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-400 mb-2">Suporte Dedicado</h4>
+                    <p class="text-gray-300 text-sm">
+                        Atendimento prioritário e acompanhamento contínuo
+                    </p>
                 </div>
             </div>
         </div>

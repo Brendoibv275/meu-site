@@ -11,50 +11,49 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-navy text-gray-100">
-    <!-- Language Selector with Dropdown -->
-    <div class="fixed top-4 right-4 z-50">
-        <div class="relative" x-data="{ open: false }">
-            <!-- Main button -->
-            <button @click="open = !open" 
-                    class="flex items-center gap-2 px-3 py-2 rounded-md bg-blue-400/20 hover:bg-blue-400/30 transition-colors">
-                <span class="text-sm font-medium">
-                    🇺🇸 English
-                </span>
-                <svg class="w-4 h-4 transition-transform" :class="{'rotate-180': open}" 
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-                     stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </button>
-
-            <!-- Menu dropdown -->
-            <div x-show="open" 
-                 @click.away="open = false"
-                 class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-navy-light border border-white/10">
-                <div class="py-1">
-                    <a href="../pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                        🇧🇷 Português
-                    </a>
-                    <a href="../en/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                        🇺🇸 English
-                    </a>
-                    <a href="../fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
-                        🇫🇷 Français
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Header with Logo -->
     <header class="fixed w-full top-0 z-30 bg-navy/80 backdrop-blur-md border-b border-white/10">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform">
-                    Brendo Dutra
-                </a>
+                <!-- Language Selector -->
+                <div class="relative" x-data="{ open: false }">
+                    <button @click="open = !open" 
+                            class="flex items-center gap-2 px-3 py-2 rounded-md bg-blue-400/20 hover:bg-blue-400/30 transition-colors">
+                        <span class="text-sm font-medium">
+                            🇺🇸 English
+                        </span>
+                        <svg class="w-4 h-4 transition-transform" :class="{'rotate-180': open}" 
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                             stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+
+                    <div x-show="open" 
+                         @click.away="open = false"
+                         class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-navy-light border border-white/10">
+                        <div class="py-1">
+                            <a href="../pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇧🇷 Português
+                            </a>
+                            <a href="../en/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇺🇸 English
+                            </a>
+                            <a href="../fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-white/5 transition-colors">
+                                🇫🇷 Français
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centered Logo -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 text-center">
+                    <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform">
+                        Ailes
+                        <span class="text-sm block text-gray-400">Where your plans take flight</span>
+                    </a>
+                </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
@@ -63,7 +62,7 @@
                     <a href="#contact" class="btn-primary">Contact</a>
                 </div>
 
-                <!-- Mobile Menu (Hamburger) -->
+                <!-- Mobile Menu Button -->
                 <button class="md:hidden text-2xl" id="mobile-menu-button">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -98,7 +97,7 @@
                     </span>
                     <br />
                     <span class="text-3xl md:text-5xl mt-2 block">
-                        Come Together
+                        Converge
                     </span>
                 </h1>
 
@@ -141,13 +140,13 @@
             <div class="fade-in space-y-8">
                 <h2 class="text-3xl md:text-4xl font-bold">
                     <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                        🦷 Transforming Clinical Expertise into Digital Innovation 🤖
+                        🦷 Transforming Clinical Experience into Digital Innovation 🤖
                     </span>
                 </h2>
                 
                 <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
                     <p>
-                        <span class="text-2xl">👋</span> Hi! I'm Brendo Dutra, a professional dedicated to combining clinical precision, strategic copywriting, and cutting-edge technology to create truly innovative digital solutions.
+                        <span class="text-2xl">👋</span> Hello! I'm Brendo Dutra, a professional dedicated to combining the precision of clinical practice, the art of strategic copywriting, and cutting-edge technological development to create truly innovative digital solutions.
                     </p>
 
                     <p>
@@ -158,22 +157,22 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
                             <div class="flex flex-col items-center">
                                 <span class="text-2xl mb-2">🔬</span>
-                                <span class="text-blue-400 font-semibold">Clinical Expertise</span>
+                                <span class="text-blue-400 font-semibold">Clinical expertise</span>
                             </div>
                             
                             <div class="flex flex-col items-center">
                                 <span class="text-2xl mb-2">💻</span>
-                                <span class="text-blue-400 font-semibold">Technical Mastery</span>
+                                <span class="text-blue-400 font-semibold">Technological mastery</span>
                             </div>
                             
                             <div class="flex flex-col items-center">
                                 <span class="text-2xl mb-2">✍️</span>
-                                <span class="text-blue-400 font-semibold">Strategic Communication</span>
+                                <span class="text-blue-400 font-semibold">Strategic communication</span>
                             </div>
                             
                             <div class="flex flex-col items-center">
                                 <span class="text-2xl mb-2">🚀</span>
-                                <span class="text-blue-400 font-semibold">Transformative Solutions</span>
+                                <span class="text-blue-400 font-semibold">Transformative solutions</span>
                             </div>
                         </div>
                     </div>
@@ -187,85 +186,188 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-blue-400 text-center mb-4">Custom Solutions</h2>
-            <p class="text-gray-300 text-center mb-12">
-                Discover how we can transform your challenges into opportunities through technology and strategic communication.
-            </p>
+    <section id="services" class="py-20 bg-navy relative overflow-hidden">
+        <div class="container mx-auto px-6 relative">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                        Solutions that Elevate your Business
+                    </span>
+                </h2>
+                <p class="text-gray-300 text-lg">
+                    Choose the ideal plan for your needs
+                </p>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- AI Applications -->
-                <div class="p-6 rounded-lg bg-opacity-10 bg-blue-900 border border-blue-800 hover:border-blue-600 transition-all">
-                    <div class="text-3xl text-blue-400 mb-4">
-                        <code>&lt;/&gt;</code>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- AI and Automation Card -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:scale-105 transition-all">
+                    <div class="text-3xl text-blue-400 mb-6">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-400 mb-3">AI Applications</h3>
-                    <p class="text-gray-300 mb-4">
-                        Development of customized AI solutions, from intelligent chatbots to complex automation systems, transforming your vision into technological reality.
-                    </p>
-                    <a href="#contact" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
-                        Learn More →
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">AI & Automation Solutions</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Starter Package</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">$2,500</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Basic chatbot</li>
+                                <li>• 1 automation process</li>
+                                <li>• 30 days technical support</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Professional Package</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">$5,000</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Custom chatbot</li>
+                                <li>• 2-3 automation processes</li>
+                                <li>• 60 days support</li>
+                                <li>• Team training</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Enterprise Package</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">Contact us</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Complete AI system</li>
+                                <li>• Multiple automations</li>
+                                <li>• Continuous support</li>
+                                <li>• Strategic consulting</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn-primary w-full text-center mt-6">
+                        Request Proposal
                     </a>
                 </div>
 
-                <!-- Strategic Copywriting -->
-                <div class="p-6 rounded-lg bg-opacity-10 bg-blue-900 border border-blue-800 hover:border-blue-600 transition-all">
-                    <div class="text-3xl text-blue-400 mb-4">
-                        <i class="fas fa-pen"></i>
+                <!-- Copywriting Card -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:scale-105 transition-all">
+                    <div class="text-3xl text-blue-400 mb-6">
+                        <i class="fas fa-pen-fancy"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-400 mb-3">Strategic Copywriting</h3>
-                    <p class="text-gray-300 mb-4">
-                        Persuasive texts that connect, engage, and convert. Combining storytelling with behavioral psychology to create messages that resonate with your target audience.
-                    </p>
-                    <a href="#contact" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
-                        Learn More →
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Strategic Copywriting</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Essential Package</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">$997</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Optimized landing page</li>
+                                <li>• 5 sequential emails</li>
+                                <li>• 15 social media posts</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Advanced Package</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">$2,500</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Complete sales funnel</li>
+                                <li>• 10 sequential emails</li>
+                                <li>• 30 social media posts</li>
+                                <li>• Video scripts</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Premium Package</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">$5,000+</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Complete strategy</li>
+                                <li>• Funnel with upsells</li>
+                                <li>• Monthly email marketing</li>
+                                <li>• Complete content management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn-primary w-full text-center mt-6">
+                        Request Proposal
                     </a>
                 </div>
 
-                <!-- Custom Consulting -->
-                <div class="p-6 rounded-lg bg-opacity-10 bg-blue-900 border border-blue-800 hover:border-blue-600 transition-all">
-                    <div class="text-3xl text-blue-400 mb-4">
+                <!-- Consulting Card -->
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:scale-105 transition-all">
+                    <div class="text-3xl text-blue-400 mb-6">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-blue-400 mb-3">Custom Consulting</h3>
-                    <p class="text-gray-300 mb-4">
-                        Tailored mentoring that combines technology, communication, and strategy. Exclusive guidance to transform your challenges into growth opportunities.
-                    </p>
-                    <a href="#contact" class="text-blue-400 hover:text-blue-300 inline-flex items-center">
-                        Learn More →
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Consulting & Mentoring</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Individual Mentoring</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">$497</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Single session (1h30)</li>
+                                <li>• Personalized diagnosis</li>
+                                <li>• Action plan</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Monthly Package</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">$1,497</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• 4 monthly sessions</li>
+                                <li>• WhatsApp support</li>
+                                <li>• Exclusive materials</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-white/10 pt-4">
+                            <h4 class="font-medium text-white">Business Consulting</h4>
+                            <p class="text-blue-400 font-bold text-xl mb-2">$2,500+</p>
+                            <ul class="text-gray-300 space-y-2 text-sm">
+                                <li>• Complete diagnosis</li>
+                                <li>• Strategic plan</li>
+                                <li>• Assisted implementation</li>
+                                <li>• Result metrics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn-primary w-full text-center mt-6">
+                        Schedule Diagnosis
                     </a>
                 </div>
             </div>
-            <!-- Investment section -->
-            <div class="mt-16 max-w-2xl mx-auto">
-                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm text-center">
-                    <h3 class="text-2xl font-bold text-blue-400">Investment</h3>
-                    <p class="text-gray-300 mt-4">
-                        Each project is unique and deserves a personalized analysis.
-                        Schedule a free consultation to discuss:
+
+            <!-- Guarantees Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-navy-light/20 p-6 rounded-xl border border-white/5">
+                    <div class="text-2xl text-blue-400 mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-400 mb-2">Satisfaction Guarantee</h4>
+                    <p class="text-gray-300 text-sm">
+                        30-day money-back guarantee on all services
                     </p>
-                    <ul class="mt-4 space-y-2 text-gray-300">
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Your project objectives
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Specific requirements
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Implementation timeline
-                        </li>
-                        <li class="flex items-center justify-center gap-2">
-                            <span class="text-blue-400">•</span> 
-                            Best solution for your budget
-                        </li>
-                    </ul>
-                    <a href="#contato" class="btn-primary mt-6 inline-block">
-                        Schedule Free Consultation
-                    </a>
+                </div>
+
+                <div class="bg-navy-light/20 p-6 rounded-xl border border-white/5">
+                    <div class="text-2xl text-blue-400 mb-4">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-400 mb-2">Easy Payment</h4>
+                    <p class="text-gray-300 text-sm">
+                        Up to 12x on credit cards or 10% off for cash payment
+                    </p>
+                </div>
+
+                <div class="bg-navy-light/20 p-6 rounded-xl border border-white/5">
+                    <div class="text-2xl text-blue-400 mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-blue-400 mb-2">Dedicated Support</h4>
+                    <p class="text-gray-300 text-sm">
+                        Priority service and continuous monitoring
+                    </p>
                 </div>
             </div>
         </div>
@@ -285,59 +387,6 @@
             <p class="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
                 Real stories of transformation and success through the union of technology and strategy
             </p>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-blue-500/50 transition-all">
-                    <div class="text-blue-400 text-4xl mb-4">❝</div>
-                    <p class="text-gray-300 mb-6">
-                        As a Clinic, we always seek the best for our patients. But with Dr. Brendo's help, we took a leap! The transformation was incredible. Beyond the significant increase in patients, thanks to his campaigns, the use of artificial intelligence and his learning ability to apply everything were fundamental to our success.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-400/20 rounded-full flex items-center justify-center">
-                            <i class="fas fa-tooth text-blue-400 text-xl"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-blue-400">Clínica Weiss</div>
-                            <div class="text-sm text-gray-400">Dental Clinic</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-blue-500/50 transition-all">
-                    <div class="text-blue-400 text-4xl mb-4">❝</div>
-                    <p class="text-gray-300 mb-6">
-                        I was looking for strategies to boost my sales, and Brendo's mentoring was crucial. He not only taught me how to create impactful campaigns but also helped build sales funnels that continue to generate results to this day. Brendo's creative ability and empathy are remarkable.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-400/20 rounded-full flex items-center justify-center">
-                            <i class="fas fa-chart-line text-blue-400 text-xl"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-blue-400">Guru Digital</div>
-                            <div class="text-sm text-gray-400">Digital Marketing</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-blue-500/50 transition-all">
-                    <div class="text-blue-400 text-4xl mb-4">❝</div>
-                    <p class="text-gray-300 mb-6">
-                        Initially, I sought out Brendo to automate my processes with AI and optimize my workflows. But the partnership went beyond expectations. Brendo's intelligence and strategic vision impressed me so much that, besides having automated my processes, I'm now learning from him and building a business partnership for the future.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-400/20 rounded-full flex items-center justify-center">
-                            <i class="fas fa-bullseye text-blue-400 text-xl"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-blue-400">Cauan Naftale</div>
-                            <div class="text-sm text-gray-400">Paid Traffic Manager</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -361,43 +410,37 @@
             <!-- Contact Grid -->
             <div class="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
                 <!-- Form -->
-                <form action="https://formsubmit.co/drbrendo.dutra@hotmail.com" method="POST" class="space-y-6">
-                    <!-- FormSubmit Settings -->
-                    <input type="hidden" name="_subject" value="New Website Contact">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_autoresponse" value="Thank you for your contact! I'll get back to you soon.">
-                    <input type="hidden" name="_next" value="https://brendodutra.netlify.app/en/thank-you.html">
-                
-                    <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-navy-light/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm fade-in">
+                    <form action="https://formsubmit.co/drbrendo.dutra@hotmail.com" method="POST" class="space-y-6">
+                        <input type="hidden" name="_subject" value="New Contact from Website">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_autoresponse" value="Thank you for your contact! I'll get back to you soon.">
+                        <input type="hidden" name="_next" value="https://brendodutra.netlify.app/en/thanks.html">
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-gray-300 mb-2">Name</label>
                                 <input type="text" id="name" name="name" required
-                                    class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
-                                           focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
-                                           placeholder-gray-500 transition-colors">
+                                    class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
                             </div>
                             
                             <div>
                                 <label for="email" class="block text-gray-300 mb-2">Email</label>
                                 <input type="email" id="email" name="email" required
-                                    class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
-                                           focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
-                                           placeholder-gray-500 transition-colors">
+                                    class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
                             </div>
                         </div>
 
                         <div>
                             <label for="subject" class="block text-gray-300 mb-2">Subject</label>
                             <select id="subject" name="subject" required
-                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
-                                       focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
-                                       transition-colors">
+                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
                                 <option value="" disabled selected>Select an option</option>
                                 <option value="free-consultation">Free Consultation</option>
                                 <option value="ai-applications">AI Applications</option>
                                 <option value="copywriting">Strategic Copywriting</option>
-                                <option value="consulting">Personalized Consulting</option>
+                                <option value="consulting">Custom Consulting</option>
                                 <option value="other">Other Subject</option>
                             </select>
                         </div>
@@ -405,15 +448,12 @@
                         <div>
                             <label for="message" class="block text-gray-300 mb-2">Message</label>
                             <textarea id="message" name="message" rows="5" required
-                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100 
-                                       focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400
-                                       placeholder-gray-500 transition-colors resize-none"></textarea>
+                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100"></textarea>
                         </div>
 
                         <button type="submit" 
                             class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-xl
-                                   transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 
-                                   focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-navy">
+                                   transition-all transform hover:scale-[1.02]">
                             Send Message
                         </button>
                     </form>
@@ -431,7 +471,6 @@
                         
                         <!-- Contact Links -->
                         <div class="space-y-4">
-                            <!-- Email -->
                             <a href="mailto:drbrendo.dutra@hotmail.com" 
                                class="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
                                 <div class="text-2xl text-blue-400 group-hover:scale-110 transition-transform">
@@ -443,7 +482,6 @@
                                 </div>
                             </a>
 
-                            <!-- WhatsApp -->
                             <a href="https://wa.me/5548991175116" target="_blank"
                                class="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
                                 <div class="text-2xl text-blue-400 group-hover:scale-110 transition-transform">
@@ -455,7 +493,6 @@
                                 </div>
                             </a>
 
-                            <!-- LinkedIn -->
                             <a href="https://www.linkedin.com/in/brendo-dutra-63b883216/" target="_blank"
                                class="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
                                 <div class="text-2xl text-blue-400 group-hover:scale-110 transition-transform">
@@ -488,8 +525,9 @@
     <!-- Footer -->
     <footer class="bg-navy-light/50 border-t border-white/10 backdrop-blur-sm">
         <div class="container mx-auto px-6 py-12">
+            <!-- Main Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <!-- About Column -->
+                <!-- Column 1 - About -->
                 <div>
                     <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-4 block">
                         Brendo Dutra
@@ -499,7 +537,7 @@
                     </p>
                 </div>
 
-                <!-- Quick Links -->
+                <!-- Column 2 - Quick Links -->
                 <div>
                     <h3 class="text-lg font-semibold text-blue-400 mb-4">Quick Links</h3>
                     <ul class="space-y-3">
@@ -509,18 +547,18 @@
                     </ul>
                 </div>
 
-                <!-- Services -->
+                <!-- Column 3 - Services -->
                 <div>
                     <h3 class="text-lg font-semibold text-blue-400 mb-4">Services</h3>
                     <ul class="space-y-3">
                         <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">AI Applications</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Strategic Copywriting</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Personalized Consulting</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Custom Consulting</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Free Consultation</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
+                <!-- Column 4 - Contact -->
                 <div>
                     <h3 class="text-lg font-semibold text-blue-400 mb-4">Contact</h3>
                     <ul class="space-y-3">
@@ -548,6 +586,7 @@
 
             <!-- Divider -->
             <div class="border-t border-white/10 pt-8">
+                <!-- Copyright and Links -->
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div class="text-gray-400 text-sm">
                         © 2024 Brendo Dutra. All rights reserved.
@@ -563,6 +602,24 @@
         </div>
     </footer>
 
+    <!-- Super Agents Chat -->
+    <div id="chat-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; z-index: 9999; transition: all 0.3s ease;">
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+            <button onclick="toggleChat()" style="background: #2563eb; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+        <iframe 
+            src="https://dash.superagentes.ai/agents/cm1rv9n1j007pl23cfnvg7qby/iframe" 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            loading="lazy"
+            allow="clipboard-write; microphone"
+            style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: white;">
+        </iframe>
+    </div>
+
     <!-- Scripts -->
     <script>
         // Mobile menu
@@ -576,7 +633,7 @@
             icon.classList.toggle('fa-times');
         });
 
-        // Fade-in animation
+        // Fade-in animation for elements
         document.addEventListener('DOMContentLoaded', () => {
             const fadeElements = document.querySelectorAll('.fade-in');
             
@@ -584,8 +641,12 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('appear');
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
+            }, {
+                threshold: 0.1
             });
 
             fadeElements.forEach(element => {
@@ -593,37 +654,23 @@
             });
         });
     </script>
-<!-- Super Agentes Chat -->
-<div id="chat-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; z-index: 9999; transition: all 0.3s ease;">
-    <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-        <button onclick="toggleChat()" style="background: #2563eb; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">
-            <i class="fas fa-minus"></i>
-        </button>
-    </div>
-    <iframe 
-        src="https://dash.superagentes.ai/agents/cm1rv9n1j007pl23cfnvg7qby/iframe" 
-        width="100%" 
-        height="100%" 
-        frameborder="0" 
-        loading="lazy"
-        allow="clipboard-write; microphone"
-        style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: white;">
-    </iframe>
-</div>
 
-<script>
-let isMinimized = false;
-function toggleChat() {
-    const container = document.getElementById('chat-container');
-    const button = container.querySelector('button i');
-    
-    if (isMinimized) {
-        container.style.height = '400px';
-        button.className = 'fas fa-minus';
-    } else {
-        container.style.height = '35px';
-        button.className = 'fas fa-plus';
-    }
-    isMinimized = !isMinimized;
-}
-</script>
+    <!-- Chat Widget Script -->
+    <script>
+        let isMinimized = false;
+        function toggleChat() {
+            const container = document.getElementById('chat-container');
+            const button = container.querySelector('button i');
+            
+            if (isMinimized) {
+                container.style.height = '400px';
+                button.className = 'fas fa-minus';
+            } else {
+                container.style.height = '35px';
+                button.className = 'fas fa-plus';
+            }
+            isMinimized = !isMinimized;
+        }
+    </script>
+</body>
+</html>
