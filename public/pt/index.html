@@ -7,8 +7,13 @@
     <title>Brendo Dutra | Copywriting & Automação</title>
     <link href="../css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preload" href="../assets/images/logo.png" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="bg-navy text-gray-100">
     <!-- Header com Logo -->
@@ -85,9 +90,9 @@
         <div class="container mx-auto px-6 relative">
             <div class="flex flex-col items-center justify-center min-h-screen text-center py-20">
                 <!-- Título principal com animação -->
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
-                    <span class="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent flex items-center justify-center gap-4">
-                        <img src="../assets/images/logo.png" alt="" class="h-24 md:h-32 w-auto animate-float">
+                <h1 class="text-3xl md:text-6xl font-bold mb-6 fade-in">
+                    <span class="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent flex flex-col md:flex-row items-center justify-center gap-4">
+                        <img src="../assets/images/logo.png" alt="" class="h-16 md:h-32 w-auto animate-float">
                         Onde seus planos voam
                     </span>
                 </h1>
@@ -228,7 +233,7 @@
                             <p class="text-blue-400 font-bold text-xl mb-2">Sob consulta</p>
                             <ul class="text-gray-300 space-y-2 text-sm">
                                 <li>• Sistema completo de IA</li>
-                                <li>• Múltiplas automações</li>
+                                <li>• Múltiplas automaões</li>
                                 <li> Suporte contínuo</li>
                                 <li>• Consultoria estratégica</li>
                             </ul>
@@ -743,6 +748,7 @@
                 height="400px" 
                 frameborder="0" 
                 loading="lazy"
+                fetchpriority="low"
                 allow="clipboard-write; microphone"
                 style="background: white;">
             </iframe>
