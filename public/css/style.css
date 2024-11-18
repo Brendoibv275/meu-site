@@ -1773,3 +1773,16 @@ select {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
