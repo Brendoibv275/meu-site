@@ -651,25 +651,89 @@
     </footer>
 
     <!-- Widget Chat -->
-    <div id="chat-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; z-index: 9999; transition: all 0.3s ease;">
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-            <button onclick="toggleChat()" style="background: #2563eb; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">
-                <i class="fas fa-minus"></i>
-            </button>
+    <div id="chat-container" class="fixed bottom-20 right-6 w-80 h-[450px] scale-0 opacity-0 transition-all duration-300 z-40">
+        <div class="bg-white rounded-lg shadow-2xl overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-400 to-blue-600 p-4 flex justify-between items-center">
+                <h3 class="text-white font-medium flex items-center gap-2">
+                    <span>Assistant Ailes</span>
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                </h3>
+                <button onclick="toggleChat()" class="text-white hover:text-gray-200 transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <iframe 
+                src="https://dash.superagentes.ai/agents/cm1rv9n1j007pl23cfnvg7qby/iframe" 
+                width="100%" 
+                height="400px" 
+                frameborder="0" 
+                loading="lazy"
+                allow="clipboard-write; microphone"
+                style="background: white;">
+            </iframe>
         </div>
-        <iframe 
-            src="https://dash.superagentes.ai/agents/cm1rv9n1j007pl23cfnvg7qby/iframe" 
-            width="100%" 
-            height="100%" 
-            frameborder="0" 
-            loading="lazy"
-            allow="clipboard-write; microphone"
-            style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: white;">
-        </iframe>
     </div>
+
+    <!-- Adicionar após o widget do chat -->
+    <div id="notification" class="hidden fixed bottom-24 right-20 bg-blue-600 text-white p-4 rounded-lg shadow-lg z-50 animate-bounce">
+        <p>👋 Bonjour! Puis-je vous aider à transformer vos idées en réalité?</p>
+    </div>
+
+    <button id="chat-button" class="fixed bottom-6 right-6 bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 text-white rounded-full p-4 shadow-lg transition-all duration-300 z-50 group">
+        <svg class="w-6 h-6 transform group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 18H6.6C5.1 18 4 16.9 4 15.4V8.6C4 7.1 5.1 6 6.6 6H17.4C18.9 6 20 7.1 20 8.6V11" 
+                  stroke="currentColor" 
+                  stroke-width="1.5"
+                  stroke-linecap="round"/>
+            <path d="M16 14L19 12L22 14M16 16L19 14L22 16" 
+                  stroke="currentColor" 
+                  stroke-width="1.5"
+                  stroke-linecap="round"/>
+            <path d="M8 10H12M8 14H10" 
+                  stroke="currentColor" 
+                  stroke-width="1.5"
+                  stroke-linecap="round"/>
+        </svg>
+    </button>
 
     <!-- Scripts -->
     <script>
+        let isOpen = false;
+
+        function toggleChat() {
+            const container = document.getElementById('chat-container');
+            const button = document.getElementById('chat-button');
+            const notification = document.getElementById('notification');
+            
+            isOpen = !isOpen;
+            
+            if (isOpen) {
+                container.classList.remove('scale-0', 'opacity-0');
+                container.classList.add('scale-100', 'opacity-100');
+                button.classList.add('rotate-45');
+                notification.classList.add('hidden');
+            } else {
+                container.classList.add('scale-0', 'opacity-0');
+                container.classList.remove('scale-100', 'opacity-100');
+                button.classList.remove('rotate-45');
+            }
+        }
+
+        // Afficher la notification après 2 minutes
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const notification = document.getElementById('notification');
+                if (!isOpen) {
+                    notification.classList.remove('hidden');
+                    setTimeout(() => {
+                        notification.classList.add('hidden');
+                    }, 5000);
+                }
+            }, 120000);
+        });
+
+        document.getElementById('chat-button').addEventListener('click', toggleChat);
+
         // Menu mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -697,22 +761,6 @@
                 observer.observe(element);
             });
         });
-
-        // Chat widget
-        let isMinimized = false;
-        function toggleChat() {
-            const container = document.getElementById('chat-container');
-            const button = container.querySelector('button i');
-            
-            if (isMinimized) {
-                container.style.height = '400px';
-                button.className = 'fas fa-minus';
-            } else {
-                container.style.height = '35px';
-                button.className = 'fas fa-plus';
-            }
-            isMinimized = !isMinimized;
-        }
     </script>
 </body>
 </html>
