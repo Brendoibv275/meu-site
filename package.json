@@ -1,20 +1,29 @@
 {
   "name": "site-brendo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Site profissional multilíngue de Brendo Dutra",
   "main": "index.js",
   "scripts": {
-    "dev": "tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
-    "build": "tailwindcss -i ./src/css/input.css -o ./public/css/style.css --minify"
+    "dev": "concurrently \"npm run dev:css\" \"npm run serve\"",
+    "dev:css": "tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
+    "build": "npm run build:css && npm run build:html",
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./public/css/style.css --minify",
+    "build:html": "html-minifier --input-dir ./public --output-dir ./dist --file-ext html --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true",
+    "serve": "http-server ./public -p 3000 --cors -c-1",
+    "optimize:images": "imagemin public/assets/images/* --out-dir=public/assets/images"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["portfolio", "multilingual", "copywriting", "automation"],
+  "author": "Brendo Dutra",
   "license": "ISC",
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "concurrently": "^8.2.2",
+    "html-minifier": "^4.0.0",
+    "http-server": "^14.1.1",
+    "imagemin-cli": "^7.0.0"
   }
-} 
+}
