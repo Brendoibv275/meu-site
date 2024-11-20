@@ -482,7 +482,7 @@
             <!-- Grid de Contato -->
             <div class="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
                 <!-- Formulário de Contato -->
-                <form action="https://formsubmit.co/drbrendo.dutra@hotmail.com" method="POST" class="space-y-6">
+                <form action="https://formsubmit.co/drbrendo.dutra@hotmail.com" method="POST" class="space-y-6" id="diagnosticForm">
                     <input type="hidden" name="_subject" value="Nova Solicitação via Website">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
@@ -535,23 +535,56 @@
                             <option value="individual">Profissional Individual</option>
                             <option value="2-10">2 a 10 funcionários</option>
                             <option value="11-50">11 a 50 funcionários</option>
-                            <option value="51-100">51 a 100 funcion��rios</option>
+                            <option value="51-100">51 a 100 funcionários</option>
                             <option value="101-500">101 a 500 funcionários</option>
                             <option value="500+">Mais de 500 funcionários</option>
                         </select>
                     </div>
 
-                    <div>
-                        <label for="message" class="block text-gray-300 mb-2">Mensagem</label>
-                        <textarea id="message" name="message" rows="5" required
-                            class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100"
-                            placeholder="Descreva seu projeto ou necessidade..."></textarea>
+                    <div class="space-y-6">
+                        <h4 class="text-blue-400 font-semibold">Diagnóstico Empresarial</h4>
+                        
+                        <div>
+                            <label for="business_area" class="block text-gray-300 mb-2">Área de Atuação</label>
+                            <input type="text" id="business_area" name="business_area" required
+                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
+                        </div>
+
+                        <div>
+                            <label for="main_challenges" class="block text-gray-300 mb-2">Principais Desafios</label>
+                            <textarea id="main_challenges" name="main_challenges" rows="3"
+                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100"
+                                placeholder="Descreva os principais desafios da sua empresa..."></textarea>
+                        </div>
+
+                        <div>
+                            <label for="current_processes" class="block text-gray-300 mb-2">Processos Atuais</label>
+                            <textarea id="current_processes" name="current_processes" rows="3"
+                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100"
+                                placeholder="Descreva seus processos atuais..."></textarea>
+                        </div>
+
+                        <div>
+                            <label for="contact_preference" class="block text-gray-300 mb-2">Preferência de Contato</label>
+                            <select id="contact_preference" name="contact_preference" required
+                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
+                                <option value="email">Email</option>
+                                <option value="whatsapp">WhatsApp</option>
+                            </select>
+                        </div>
+
+                        <div id="whatsapp_field" class="hidden">
+                            <label for="whatsapp" class="block text-gray-300 mb-2">Número do WhatsApp</label>
+                            <input type="tel" id="whatsapp" name="whatsapp"
+                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100"
+                                placeholder="+55 (00) 00000-0000">
+                        </div>
                     </div>
 
                     <button type="submit" 
                         class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-xl
                                transition-all transform hover:scale-[1.02]">
-                        Enviar Mensagem
+                        Solicitar Diagnóstico
                     </button>
                 </form>
 
