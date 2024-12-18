@@ -10,7 +10,9 @@
     "build:css": "tailwindcss -i ./src/css/input.css -o ./public/css/style.css --minify",
     "build:html": "html-minifier --input-dir ./public --output-dir ./dist --file-ext html --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true",
     "serve": "http-server ./public -p 3000 --cors -c-1",
-    "optimize:images": "imagemin public/assets/images/* --out-dir=public/assets/images"
+    "optimize:images": "imagemin public/assets/images/* --out-dir=public/assets/images",
+    "optimize:images:webp": "imagemin public/assets/images/* --out-dir=public/assets/images --plugin=webp",
+    "build:assets": "npm run optimize:images && npm run optimize:images:webp"
   },
   "keywords": ["portfolio", "multilingual", "copywriting", "automation"],
   "author": "Brendo Dutra",
