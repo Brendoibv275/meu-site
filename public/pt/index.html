@@ -469,112 +469,51 @@
             </div>
 
             <!-- Grid de Contato -->
-            <div class="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
-                <!-- Formulário de Contato -->
-                <form action="https://formsubmit.co/drbrendo.dutra@hotmail.com" method="POST" class="space-y-6" id="diagnosticForm">
-                    <input type="hidden" name="_subject" value="Nova Solicitação via Website">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_autoresponse" value="Obrigado pelo contato! Retornarei em breve.">
-                    <input type="hidden" name="_next" value="https://brendodutra.netlify.app/pt/thanks.html">
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-gray-300 mb-2">Nome</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-gray-300 mb-2">Email</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
-                        </div>
-                    </div>
+<div class="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+    <!-- Formulário de Contato -->
+    <form action="https://formsubmit.co/drbrendo.dutra@hotmail.com" method="POST" class="space-y-6" id="diagnosticForm">
+        <input type="hidden" name="_subject" value="Nova Solicitação via Website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_autoresponse" value="Obrigado pelo contato! Retornarei em breve.">
+        <input type="hidden" name="_next" value="https://brendodutra.netlify.app/pt/thanks.html">
 
-                    <div>
-                        <label for="service" class="block text-gray-300 mb-2">Serviço de Interesse</label>
-                        <select id="service" name="service" required
-                            class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
-                            <option value="" disabled selected>Selecione um serviço</option>
-                            <optgroup label="Automação & IA">
-                                <option value="automacao-basica">Pacote Básico - Automação</option>
-                                <option value="automacao-avancada">Pacote Avançado - Automação</option>
-                                <option value="automacao-premium">Pacote Premium - Automação</option>
-                            </optgroup>
-                            <optgroup label="Páginas & SEO">
-                                <option value="landing-page">Landing Page</option>
-                                <option value="site-profissional">Site Profissional</option>
-                                <option value="solucao-enterprise">Solução Enterprise</option>
-                            </optgroup>
-                            <optgroup label="Consultoria Tech">
-                                <option value="diagnostico-digital">Diagnóstico Digital</option>
-                                <option value="mentoria-mensal">Mentoria Mensal</option>
-                                <option value="consultoria-enterprise">Consultoria Enterprise</option>
-                            </optgroup>
-                            <option value="outro">Outro Assunto</option>
-                        </select>
-                    </div>
+        <div>
+            <label for="name" class="block text-gray-300 mb-2">Nome</label>
+            <input type="text" id="name" name="name" required
+                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
+        </div>
 
-                    <div>
-                        <label for="company_size" class="block text-gray-300 mb-2">Tamanho da Empresa</label>
-                        <select id="company_size" name="company_size" required
-                            class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
-                            <option value="" disabled selected>Selecione o número de funcionários</option>
-                            <option value="individual">Profissional Individual</option>
-                            <option value="2-10">2 a 10 funcionários</option>
-                            <option value="11-50">11 a 50 funcionários</option>
-                            <option value="51-100">51 a 100 funcionários</option>
-                            <option value="101-500">101 a 500 funcionários</option>
-                            <option value="500+">Mais de 500 funcionários</option>
-                        </select>
-                    </div>
+        <div>
+            <label for="email" class="block text-gray-300 mb-2">Email</label>
+            <input type="email" id="email" name="email" required
+                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
+        </div>
 
-                    <div class="space-y-6">
-                        <h4 class="text-blue-400 font-semibold">Diagnóstico Empresarial</h4>
-                        
-                        <div>
-                            <label for="business_area" class="block text-gray-300 mb-2">Área de Atuação</label>
-                            <input type="text" id="business_area" name="business_area" required
-                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
-                        </div>
+        <div>
+            <label for="service" class="block text-gray-300 mb-2">Serviço de Interesse</label>
+            <select id="service" name="service" required
+                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
+                <option value="" disabled selected>Selecione um serviço</option>
+                <option value="plumage">🪶 Plumage - Diagnóstico de Inteligência Digital</option>
+                <option value="envol">🛫 Envol - Agente Pessoal</option>
+                <option value="altitude">✈️ Altitude - Tudo do Envol +</option>
+                <option value="horizon">🛸 Horizon - Personalização Completa</option>
+            </select>
+        </div>
 
-                        <div>
-                            <label for="main_challenges" class="block text-gray-300 mb-2">Principais Desafios</label>
-                            <textarea id="main_challenges" name="main_challenges" rows="3"
-                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100"
-                                placeholder="Descreva os principais desafios da sua empresa..."></textarea>
-                        </div>
+        <div>
+            <label for="main_challenges" class="block text-gray-300 mb-2">Principais Desafios</label>
+            <textarea id="main_challenges" name="main_challenges" rows="3"
+                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100"
+                placeholder="Descreva os principais desafios da sua empresa..."></textarea>
+        </div>
 
-                        <div>
-                            <label for="current_processes" class="block text-gray-300 mb-2">Processos Atuais</label>
-                            <textarea id="current_processes" name="current_processes" rows="3"
-                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100"
-                                placeholder="Descreva seus processos atuais..."></textarea>
-                        </div>
-
-                        <div>
-                            <label for="contact_preference" class="block text-gray-300 mb-2">Preferência de Contato</label>
-                            <select id="contact_preference" name="contact_preference" required
-                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100">
-                                <option value="email">Email</option>
-                                <option value="whatsapp">WhatsApp</option>
-                            </select>
-                        </div>
-
-                        <div id="whatsapp_field" class="hidden">
-                            <label for="whatsapp" class="block text-gray-300 mb-2">Número do WhatsApp</label>
-                            <input type="tel" id="whatsapp" name="whatsapp"
-                                class="w-full bg-navy/50 border border-white/10 rounded-xl px-4 py-3 text-gray-100"
-                                placeholder="+55 (00) 00000-0000">
-                        </div>
-                    </div>
-
-                    <button type="submit" 
-                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-xl
-                               transition-all transform hover:scale-[1.02]">
-                        Solicitar Diagnóstico
-                    </button>
+        <button type="submit" 
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-xl
+                   transition-all transform hover:scale-[1.02]">
+            Solicitar Diagnóstico
+        </button>
                 </form>
 
                 <!-- Informações de Contato -->
